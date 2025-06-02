@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -137,7 +136,7 @@ export const Pricing: React.FC = () => {
                 
                 <Link to="/coming-soon">
                   <button 
-                    className={`w-full py-3 ${plan.popular ? 'bg-[#FE5F20] hover:bg-[#e55624]' : 'bg-[rgba(254,95,32,0.75)] hover:bg-[#FE5F20]'} text-neutral-800 font-semibold rounded-md transition-colors`}>
+                    className={`w-full py-3 ${plan.popular ? 'bg-[#FE5F20] hover:bg-[#e55624]' : 'bg-[rgba(254,95,32,0.75)] hover:bg-[#FE5F20]'} text-white font-semibold rounded-md transition-colors`}>
                     Choose Plan
                   </button>
                 </Link>

@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
             AI-Powered Motion Tracking
           </h1>
           <p className="text-[#333] text-sm md:text-[15px]">
-            Welcome to clone, your intelligent training companion that helps you move better, grow stronger, and stay consistent. Whether you're at home, school, or on the go, our motion-tracking AI guides you with real-time feedback, personalized assessments, and progress tracking — all designed to make fitness fun, smart, and effective.
+            Welcome to Arthlete , your intelligent training companion that helps you move better, grow stronger, and stay consistent. Whether you're at home, school, or on the go, our motion-tracking AI guides you with real-time feedback, personalized assessments, and progress tracking — all designed to make fitness fun, smart, and effective.
           </p>
           <div className="flex gap-4">
             <a href="https://forms.gle/RHsTMRrQkHoToqxXA" 
