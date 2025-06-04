@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const Features: React.FC = () => {
@@ -42,51 +41,60 @@ export const Features: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-20 bg-[#F6FBE9]">
+    <section
+      className="py-16 px-4 md:px-8 lg:px-20 bg-[#F6FBE9]"
+      aria-labelledby="features-heading"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-800">
-            Features
+          <h2
+            id="features-heading"
+            className="text-3xl md:text-4xl font-bold text-neutral-800"
+          >
+            Key Features of Arthlete
           </h2>
           <p className="text-[#333] text-base mt-4 max-w-2xl mx-auto">
-            Welcome to the Feature Section of Arthlete, your ultimate destination for all things fitness and wellness.
+            Discover how Arthlete empowers your fitness and wellness journey with intelligent, AI-driven features.
           </p>
         </div>
 
-        {/* Light green grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-          {/* Grid pattern overlay */}
-          <div className="absolute inset-0 grid grid-cols-6 w-full h-full pointer-events-none">
-            {Array.from({ length: 6 }).map((_, colIndex) => (
-              <div key={colIndex} className="h-full border-r border-[#A3D9A5] border-opacity-20 last:border-r-0"></div>
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Light grid pattern */}
+          <div className="absolute inset-0 grid grid-cols-6 w-full h-full pointer-events-none z-0">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={`col-${i}`} className="h-full border-r border-[#A3D9A5] border-opacity-20 last:border-r-0"></div>
             ))}
-            {Array.from({ length: 4 }).map((_, rowIndex) => (
-              <div key={rowIndex} className="w-full border-b border-[#A3D9A5] border-opacity-20 absolute" style={{ top: `${(rowIndex + 1) * 25}%` }}></div>
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div
+                key={`row-${i}`}
+                className="w-full border-b border-[#A3D9A5] border-opacity-20 absolute"
+                style={{ top: `${(i + 1) * 25}%` }}
+              ></div>
             ))}
           </div>
 
-          {/* Feature cards */}
-          {features.map((feature, index) => (
-            <div
+          {/* Feature Cards */}
+          {features.map(({ title, description, icon, bgColor }, index) => (
+            <article
               key={index}
               className="bg-white rounded-lg p-6 shadow-sm border border-[#E5F5BD] relative z-10 hover:shadow-md transition-shadow"
+              aria-label={title}
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className={`${feature.bgColor} p-3 rounded-lg`}>
+              <header className="flex items-center gap-4 mb-4">
+                <div className={`${bgColor} p-3 rounded-lg`}>
                   <img
-                    src={feature.icon}
-                    alt={feature.title}
+                    src={icon}
+                    alt={`${title} icon`}
                     className="w-6 h-6"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-800">
-                  {feature.title}
+                  {title}
                 </h3>
-              </div>
-              <p className="text-[#333] text-sm">
-                {feature.description}
-              </p>
-            </div>
+              </header>
+              <p className="text-[#333] text-sm">{description}</p>
+            </article>
           ))}
         </div>
       </div>
