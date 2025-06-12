@@ -44,7 +44,7 @@ export const Pricing: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-20 bg-[#F6FBE9] section-with-grid">
+    <section className="py-16 px-4 md:px-8 lg:px-20 bg-[#FFF0E0]">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-800">
@@ -86,57 +86,47 @@ export const Pricing: React.FC = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {/* Grid pattern overlay */}
-          <div className="absolute inset-0 grid grid-cols-6 w-full h-full pointer-events-none">
-            {Array.from({ length: 6 }).map((_, colIndex) => (
-              <div key={colIndex} className="h-full border-r border-[#A3D9A5] border-opacity-20 last:border-r-0"></div>
-            ))}
-            {Array.from({ length: 4 }).map((_, rowIndex) => (
-              <div key={rowIndex} className="w-full border-b border-[#A3D9A5] border-opacity-20 absolute" style={{ top: `${(rowIndex + 1) * 25}%` }}></div>
-            ))}
-          </div>
-
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-white rounded-lg overflow-hidden shadow-sm border relative z-10 ${plan.popular ? 'border-[#FE5F20] transform scale-105 md:scale-105' : 'border-[#EEF8D3]'}`}
+              className={`bg-white rounded-2xl overflow-hidden shadow-xl border relative z-10 ${plan.popular ? 'border-[#FE5F20] transform scale-105 md:scale-105' : 'border-gray-100'}`}
             >
               {plan.popular && (
-                <div className="bg-[#FE5F20] text-white text-center py-1 text-xs font-medium">
+                <div className="bg-[#FE5F20] text-white text-center py-2 text-sm font-semibold rounded-t-2xl absolute -top-1 left-1/2 -translate-x-1/2 w-40 tracking-wider">
                   MOST POPULAR
                 </div>
               )}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-neutral-800">
+              <div className="p-8 pt-10">
+                <h3 className="text-2xl font-bold text-neutral-800 mb-2">
                   {plan.title}
                 </h3>
-                <p className="text-[#4C4C4D] text-sm mt-1">
+                <p className="text-gray-500 text-sm mt-1">
                   Up to 15% off on Yearly Plan
                 </p>
                 
-                <div className="flex items-center justify-center my-6">
-                  <span className="text-[#2C5446] text-4xl font-bold">₹{plan.price}</span>
-                  <span className="text-[#333] text-sm ml-1 self-end mb-1">/month</span>
+                <div className="flex items-baseline justify-center my-8">
+                  <span className="text-[#2C5446] text-5xl font-extrabold">₹{plan.price}</span>
+                  <span className="text-[#333] text-base ml-1">/month</span>
                 </div>
                 
-                <p className="text-[#333] text-sm mb-6">
+                <p className="text-gray-600 text-base mb-8 leading-relaxed">
                   {plan.description}
                 </p>
                 
-                <ul className="space-y-2 mb-8">
+                <ul className="space-y-3 mb-10">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center">
-                      <svg className="w-4 h-4 text-[#FE5F20] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <li key={i} className="flex items-center text-gray-700 text-base">
+                      <svg className="w-5 h-5 text-[#468671] mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-sm">{feature}</span>
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
-                <Link to="/coming-soon">
+                <Link to="https://forms.gle/RHsTMRrQkHoToqxXA" target="_blank" rel="noopener noreferrer">
                   <button 
-                    className={`w-full py-3 ${plan.popular ? 'bg-[#FE5F20] hover:bg-[#e55624]' : 'bg-[rgba(254,95,32,0.75)] hover:bg-[#FE5F20]'} text-white font-semibold rounded-md transition-colors`}>
+                    className={`w-full py-4 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 ${plan.popular ? 'bg-[#FE5F20] hover:bg-[#e55624]' : 'bg-[#FFAB6A] hover:bg-[#FE5F20] text-white'}`}>
                     Choose Plan
                   </button>
                 </Link>

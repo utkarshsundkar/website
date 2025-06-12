@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 export const Challenges: React.FC = () => {
   return (
-    // Section with gradient background and increased vertical padding
-    <section className="relative py-12 md:py-20 px-1 md:px-8 lg:px-20 bg-gradient-to-b from-[#FFF0E0] to-white"> {/* Increased vertical padding */}
+    // Section with light orange background and increased vertical padding
+    <section className="relative py-12 md:py-20 px-1 md:px-8 lg:px-20 bg-[#FFF0E0]"> {/* Light orange background, Increased vertical padding */}
       
       {/* Content container centered and above background elements */}
       <div className="container mx-auto relative z-10"> 

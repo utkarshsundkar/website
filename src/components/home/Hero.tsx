@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="bg-[#F6FBE9] py-12 md:py-16 px-4 md:px-8 lg:px-20 relative">
+    <section className="bg-[#FFF0E0] py-12 md:py-16 px-4 md:px-8 lg:px-20 relative">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="space-y-4 md:space-y-6">
           <span className="text-xs uppercase font-medium text-[#468671] tracking-wider">Transform Your Fitness Journey with</span>
@@ -44,9 +44,10 @@ export const Hero: React.FC = () => {
         
         <div className="flex justify-center md:justify-end">
           <img 
-            src="/lovable-uploads/1245b779-a8b3-411d-9e77-dc586df7a61c.png" 
-            alt="Arthlete App" 
-            className="max-w-[220px] sm:max-w-[280px] md:max-w-xs lg:max-w-sm"
+            src="/assets/Home.png"
+            alt="Arthlete App Home"
+            className="max-w-[220px] sm:max-w-[280px] md:max-w-xs lg:max-w-sm w-full h-full object-contain rounded-xl shadow-lg"
+            style={{ backgroundColor: 'transparent' }}
           />
         </div>
       </div>
